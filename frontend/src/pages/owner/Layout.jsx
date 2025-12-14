@@ -9,10 +9,11 @@ const Layout = () => {
     <div className="flex flex-col">
       {/* Thanh điều hướng phía trên */}
       <NavbarOwner />
-      {/* Sidebar menu bên trái */}
-      <Sidebar />
-      {/* Vùng hiển thị nội dung các route con (Dashboard, AddCar, ManageCars, ManageBookings) */}
+      {/* Container flex ngang chứa Sidebar và nội dung */}
       <div className="flex">
+        {/* Sidebar menu bên trái */}
+        <Sidebar />
+        {/* Vùng hiển thị nội dung các route con (Dashboard, AddCar, ManageCars, ManageBookings) */}
         <Outlet />
       </div>
     </div>
