@@ -6,6 +6,11 @@ import CarDetails from "./pages/CarDetails";
 import Cars from "./pages/Cars";
 import Home from "./pages/Home";
 import MyBookings from "./pages/MyBookings";
+import AddCar from "./pages/owner/AddCar";
+import Dashboard from "./pages/owner/Dashboard";
+import OwnerLayout from "./pages/owner/Layout";
+import ManageBookings from "./pages/owner/ManageBookings";
+import ManageCars from "./pages/owner/ManageCars";
 
 /**
  * Component App - Component gốc của ứng dụng
@@ -34,6 +39,18 @@ function App() {
         <Route element={<Cars />} path="/cars" />
         {/* Trang đặt chỗ của tôi */}
         <Route element={<MyBookings />} path="/my-bookings" />
+
+        {/* Routes cho Owner Dashboard với nested routes */}
+        <Route element={<OwnerLayout />} path="/owner">
+          {/* Trang bảng điều khiển chủ xe */}
+          <Route element={<Dashboard />} index />
+          {/* Trang thêm xe mới */}
+          <Route element={<AddCar />} path="add-car" />
+          {/* Trang quản lý xe */}
+          <Route element={<ManageCars />} path="manage-cars" />
+          {/* Trang quản lý đặt xe */}
+          <Route element={<ManageBookings />} path="manage-bookings" />
+        </Route>
       </Routes>
 
       {/* Hiển thị Footer nếu không phải trang owner */}
